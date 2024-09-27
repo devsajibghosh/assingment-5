@@ -29,6 +29,7 @@ document.getElementById('donation-btn-n').addEventListener('click', function(e){
     div.style.border = '1px solid white';
     div.style.borderRadius = '10px';
     div.style.padding = '10px';
+    div.style.marginBottom = '10px';
     div.innerHTML = `
       <p class="text-center font-bold">Donation for Noakhali: ${InputDataNoakhali} Tk.</p>
       <p class="text-center text-white">Date: ${date}</p>
@@ -39,6 +40,14 @@ document.getElementById('donation-btn-n').addEventListener('click', function(e){
   }
 
   document.getElementById('main-balance').innerText = mianBalanceMinase;
+
+  // Display success alert
+  Swal.fire({
+    icon: 'success',
+    title: 'Donation Successful',
+    text: 'Thank you for your donation!',
+  });
+
 })
 
 
@@ -70,11 +79,12 @@ document.getElementById('feni-donation-btn').addEventListener('click', function(
 
     const div = document.createElement('div');
     const date = Date();
-    div.style.backgroundColor = '#b4f461';
+    div.style.backgroundColor = '#f1c40f';
     div.style.fontSize = '20px';
     div.style.border = '1px solid white';
     div.style.borderRadius = '10px';
     div.style.padding = '10px';
+    div.style.marginBottom = '10px';
     div.innerHTML = `
       <p class="text-center font-bold">Donation for Feni: ${InputDataFeni} Tk.</p>
       <p class="text-center text-white">Date: ${date}</p>
@@ -85,16 +95,67 @@ document.getElementById('feni-donation-btn').addEventListener('click', function(
   }
 
   document.getElementById('main-balance').innerText = mianBalanceFeni;
+
+  // Display success alert
+Swal.fire({
+  icon: 'success',
+  title: 'Donation Successful',
+  text: 'Thank you for your donation!',
+});
+
 })
 
 // donation for aid
 
+document.getElementById('aid-btn').addEventListener('click', function(e){
+  e.preventDefault();
 
+  const aidBalance = textDataGet('aid-balance');
+  const aidInputData = getInputValueById('aid-input-data');
 
+  const mianBalance = textDataGet('main-balance');
 
+  const addAidBalance = aidInputData + aidBalance;
 
+  const aidMainBalance = mianBalance - aidInputData;
 
+  if(aidInputData < 0){
+    alert('no minimize');
+  }
+  else if(isNaN(aidInputData)){
+    alert('write a number')
+  }
+  else{
 
+    // transcaiton 
+
+    const div = document.createElement('div');
+    const date = Date();
+    div.style.backgroundColor = '#3498db';
+    div.style.fontSize = '20px';
+    div.style.border = '1px solid white';
+    div.style.borderRadius = '10px';
+    div.style.padding = '10px';
+    div.style.marginBottom = '10px';
+    div.innerHTML = `
+      <p class="text-center font-bold">Donation for Aid: ${aidInputData} Tk.</p>
+      <p class="text-center text-white">Date: ${date}</p>
+    `
+    document.getElementById('history-section').appendChild(div);
+
+    document.getElementById('aid-balance').innerText = addAidBalance;
+  }
+
+  document.getElementById('main-balance').innerText = aidMainBalance;
+
+  // Display success alert
+  Swal.fire({
+    icon: 'success',
+    title: 'Donation Successful',
+    text: 'Thank you for your donation!',
+  });
+
+})
 
 // chnge the btn color
 

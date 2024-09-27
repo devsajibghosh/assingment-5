@@ -9,6 +9,10 @@
   <!-- link of daisy-Ui -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!--sweet alret add -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
 <!-- navbar start -->
@@ -103,13 +107,13 @@
         
             <button class="btn">
               <img src="/images/coin.png" alt="">
-              <b class="text-xl">0</b>
+              <b  id="aid-balance" class="text-xl">0</b>
               <span>BDT</span>
             </button>
        
           <h3 class="font-bold lg:text-[24px] mt-2 mb-2">Aid for Injured in the Quota Movement</h3>
           <p class="mb-5 text-justify">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
-          <input type="text" placeholder="write donation amout" class="input input-bordered w-full " />
+          <input id="aid-input-data" type="text" placeholder="write donation amout" class="input input-bordered w-full " />
           <button id="aid-btn" class="btn w-full mt-5 bg-[#b4f461] font-bold">Donate Now</button>
         </div>
       </div>
