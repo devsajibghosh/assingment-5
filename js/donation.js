@@ -14,9 +14,19 @@ document.getElementById('donation-btn-n').addEventListener('click', function(e){
 
   if(InputDataNoakhali < 0){
     alert('no minimize');
+    return InputDataNoakhali;
   }
   else if(isNaN(InputDataNoakhali)){
     alert('write a number')
+    return InputDataNoakhali;
+  }
+  else if (InputDataNoakhali > mianBalance) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Transaction Failed',
+      text: 'Insufficient funds. Your balance is too low for this donation.',
+    });
+    return InputDataNoakhali;
   }
   else{
 
@@ -69,9 +79,19 @@ document.getElementById('feni-donation-btn').addEventListener('click', function(
   
   if(InputDataFeni < 0){
     alert('no minimize');
+    return InputDataFeni;
   }
   else if(isNaN(InputDataFeni)){
     alert('write a number')
+    return InputDataFeni;
+  }
+  else if(InputDataFeni > mianBalance){
+    Swal.fire({
+      icon: 'error',
+      title: 'Transaction Failed',
+      text: 'Insufficient funds. Your balance is too low for this donation.',
+    });
+    return InputDataFeni;
   }
   else{
 
@@ -121,9 +141,19 @@ document.getElementById('aid-btn').addEventListener('click', function(e){
 
   if(aidInputData < 0){
     alert('no minimize');
+    return aidInputData;
   }
   else if(isNaN(aidInputData)){
     alert('write a number')
+    return aidInputData;
+  }
+  else if(aidInputData > mianBalance){
+    Swal.fire({
+      icon: 'error',
+      title: 'Transaction Failed',
+      text: 'Insufficient funds. Your balance is too low for this donation.',
+    });
+    return aidInputData;
   }
   else{
 
