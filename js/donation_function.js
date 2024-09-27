@@ -29,5 +29,10 @@ document.getElementById('donation-btn').addEventListener('click', function(){
     document.getElementById('history-section').classList.add('hidden');
 })
 
-// change the color function
+// show blog and home button
+
+document.getElementById('show-blog').addEventListener('click', function(){
+  window.location.href = '/blog.html';
+})
+
 
